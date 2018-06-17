@@ -29,7 +29,7 @@ extension AnimatorCardDelegate {
             selectedGestureRecongnser.setSelectedCardIndex()
             
             /// Swipe up manually
-            selectedGestureRecongnser.direction = .up
+            selectedGestureRecongnser.direction = UISwipeGestureRecognizer.Direction.up
             selectedGestureRecongnser.handleSwipe(gesture: selectedGestureRecongnser)
             
         }

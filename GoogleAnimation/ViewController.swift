@@ -46,9 +46,9 @@ class ViewController: UIViewController,AnimatorCardDelegate,AnimatorTableDelegat
         let btnMenu  =  UIButton(type: .custom)
         btnMenu.translatesAutoresizingMaskIntoConstraints = false
         btnMenu.backgroundColor = .clear
-        btnMenu.addTarget(self, action: #selector(self.btnActionTaped(btn:)), for: .touchUpInside)
-        btnMenu.setImage(UIImage.init(named: "menu"), for: .normal);
-        btnMenu.setImage(UIImage.init(named: "back"), for: .selected);
+        btnMenu.addTarget(self, action: #selector(self.btnActionTaped(btn:)), for: UIControl.Event.touchUpInside)
+        btnMenu.setImage(UIImage.init(named: "menu"), for: UIControl.State.normal);
+        btnMenu.setImage(UIImage.init(named: "back"), for: UIControl.State.selected);
         btnMenu.tag = 1
         self.view.addSubview(btnMenu)
         
@@ -70,9 +70,9 @@ class ViewController: UIViewController,AnimatorCardDelegate,AnimatorTableDelegat
         let btnSearch  =  UIButton(type: .custom)
         btnSearch.translatesAutoresizingMaskIntoConstraints = false
         btnSearch.backgroundColor = .clear
-        btnSearch.addTarget(self, action: #selector(self.btnActionTaped(btn:)), for: .touchUpInside)
-        btnSearch.setImage(UIImage.init(named: "menu"), for: .normal);
-        btnSearch.setImage(UIImage.init(named: "back"), for: .selected);
+        btnSearch.addTarget(self, action: #selector(self.btnActionTaped(btn:)), for: UIControl.Event.touchUpInside)
+        btnSearch.setImage(UIImage.init(named: "menu"), for: UIControl.State.normal);
+        btnSearch.setImage(UIImage.init(named: "back"), for: UIControl.State.selected);
         btnSearch.tag = 1
         self.view.addSubview(btnSearch)
         
@@ -115,7 +115,7 @@ class ViewController: UIViewController,AnimatorCardDelegate,AnimatorTableDelegat
 
     
     //MARK:- UIButton Actions
-    func btnActionTaped(btn:UIButton){
+    @objc func btnActionTaped(btn:UIButton){
     
     }
     

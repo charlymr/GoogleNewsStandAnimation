@@ -126,7 +126,7 @@ class CardHolder:UIScrollView,UIScrollViewDelegate{
                 let btn  =  UIButton(type: .custom)
                 btn.translatesAutoresizingMaskIntoConstraints = false
                 btn.backgroundColor = .clear
-                btn.addTarget(self, action: #selector(self.btnActionTaped(btn:)), for: .touchUpInside)
+                btn.addTarget(self, action: #selector(self.btnActionTaped(btn:)), for: UIControl.Event.touchUpInside)
                 btn.tag = i
                 c.addSubview(btn)
                 
@@ -158,7 +158,7 @@ class CardHolder:UIScrollView,UIScrollViewDelegate{
     }
     
     
-    func btnActionTaped(btn:UIButton){
+    @objc func btnActionTaped(btn:UIButton){
             print("btnActionTaped");
         
         
