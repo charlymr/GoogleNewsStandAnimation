@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import GoogleAnimatorConstrain
+
+
 
 let gap:CGFloat   = is_iPhoneX ? SCREEN_WIDTH*0.05 : SCREEN_WIDTH*0.02
 

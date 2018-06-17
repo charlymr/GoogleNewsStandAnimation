@@ -8,15 +8,16 @@
 
 import Foundation
 import UIKit
-class Card:UIImageView{
+
+public class Card:UIImageView{
     
     
     var bgImage:String? = ""
 
-    var isSelected:Bool?
+    public var isSelected:Bool?
     
     var title:Title = Title()
-    var strTitle:String?
+    public var strTitle:String?
     var line:Line = Line()
     
     var tblView:TableView! = TableView()

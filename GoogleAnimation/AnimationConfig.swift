@@ -8,10 +8,10 @@
 
 import Foundation
 import UIKit
-let SCREEN_WIDTH:CGFloat = UIScreen.main.bounds.size.width
-let SCREEN_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
 
-let is_iPhoneX: Bool = UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436
+public let SCREEN_WIDTH:CGFloat = UIScreen.main.bounds.size.width
+public let SCREEN_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
+public let is_iPhoneX: Bool = UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436
 
 enum Stage:Int {
    case header_stage = 0,
@@ -22,8 +22,10 @@ enum Stage:Int {
 
 
 
-struct AnimationConfig{
+public struct AnimationConfig{
  
+    public init() {
+    }
     
     var selectedIndex:Int? = 0
     var animationaccerlation:CGFloat! = 40.0

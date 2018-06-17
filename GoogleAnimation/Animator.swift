@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-protocol AnimatorCardDelegate{
+public protocol AnimatorCardDelegate{
 
     func  cardClickedFromTopHeader(card:Card)
 
 }
 
-extension AnimatorCardDelegate {
+public extension AnimatorCardDelegate {
     func cardClickedFromTopHeader(card:Card) {
         /// This code block will animate selected card to mid way while full_stage
         if Animator.shared.config.headerStage == Stage.full_stage {
@@ -37,20 +37,21 @@ extension AnimatorCardDelegate {
     }
 }
 
-protocol AnimatorTableDelegate {
+
+public protocol AnimatorTableDelegate {
     func  didSelect(item:Model,inCard card:Card)
 }
 
-class Animator:NSObject{
+public class Animator: NSObject{
 
     
-     var delegateCard:AnimatorCardDelegate! = nil
-     var delegateTable:AnimatorTableDelegate! = nil
+     public var delegateCard:AnimatorCardDelegate! = nil
+     public var delegateTable:AnimatorTableDelegate! = nil
     
     lazy var config:AnimationConfig = AnimationConfig()
 
     
-    static var shared:Animator = Animator()
+    static public var shared:Animator = Animator()
     
     
     var imgViewBg:UIImageView! = UIImageView()
@@ -61,7 +62,7 @@ class Animator:NSObject{
 
     var viewMain:UIView!
 
-    public  func setAnimator(_ backgroundImage:UIImage? = UIImage(),_ v:UIView? = UIView(),_ config:AnimationConfig? = AnimationConfig()) {
+    public func setAnimator(_ backgroundImage:UIImage? = UIImage(),_ v:UIView? = UIView(),_ config:AnimationConfig? = AnimationConfig()) {
    
         self.config = config!
         
