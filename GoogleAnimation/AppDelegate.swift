@@ -11,7 +11,7 @@ import GoogleAnimatorConstrain
 
 
 
-func gap() -> CGFloat {
+public func gap() -> CGFloat {
     return require_SafeArea ? SCREEN_WIDTH()*0.05 : SCREEN_WIDTH()*0.02
 }
 

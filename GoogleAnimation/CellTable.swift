@@ -1,6 +1,6 @@
 import UIKit
 
-class CellTable: UITableViewCell {
+public class CellTable: UITableViewCell {
     
     //MARK:- Properties
     
@@ -8,7 +8,7 @@ class CellTable: UITableViewCell {
     var lblTitle:UILabel!
     var imgView:UIImageView!
     var line:UIView!
-    var gap:CGFloat = SCREEN_WIDTH()*0.035
+    public var gap: CGFloat = SCREEN_WIDTH()*0.035
     
     var top:NSLayoutConstraint? = NSLayoutConstraint()
     var leading:NSLayoutConstraint? = NSLayoutConstraint()
@@ -96,7 +96,7 @@ class CellTable: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override public func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
