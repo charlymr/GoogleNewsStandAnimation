@@ -14,8 +14,6 @@ class TableView:UITableView,UITableViewDelegate,UITableViewDataSource,UIScrollVi
     var items:[Model]? = [Model]()
     var isSelected:Bool?
     
-  
-    
     var top:NSLayoutConstraint?                 = NSLayoutConstraint()
     var leading:NSLayoutConstraint?             = NSLayoutConstraint()
     var bottom:NSLayoutConstraint?              = NSLayoutConstraint()
@@ -46,8 +44,6 @@ class TableView:UITableView,UITableViewDelegate,UITableViewDataSource,UIScrollVi
         self.layoutIfNeeded()
     
     }
-    
-
 
     //MARK:- UITableView Delegate and DataSource Methods
     
@@ -71,12 +67,9 @@ class TableView:UITableView,UITableViewDelegate,UITableViewDataSource,UIScrollVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SCREEN_WIDTH*0.10+SCREEN_WIDTH*0.40
+        return SCREEN_WIDTH()*0.10+SCREEN_WIDTH()*0.40
     }
-    
-    
-    
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
             let c = cell as! CellTable
@@ -95,18 +88,13 @@ class TableView:UITableView,UITableViewDelegate,UITableViewDataSource,UIScrollVi
         
     }
     
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         
         
         
     }
-    
-    
-    
-
-
+  
     func getRandomColor() -> UIColor{
         
         let randomRed:CGFloat = CGFloat(drand48())
@@ -119,6 +107,4 @@ class TableView:UITableView,UITableViewDelegate,UITableViewDataSource,UIScrollVi
         
     }
 
-    
-    
-}
+ }

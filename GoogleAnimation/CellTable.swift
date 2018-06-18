@@ -8,22 +8,13 @@ class CellTable: UITableViewCell {
     var lblTitle:UILabel!
     var imgView:UIImageView!
     var line:UIView!
-    var gap:CGFloat = SCREEN_WIDTH*0.035
-    
+    var gap:CGFloat = SCREEN_WIDTH()*0.035
     
     var top:NSLayoutConstraint? = NSLayoutConstraint()
     var leading:NSLayoutConstraint? = NSLayoutConstraint()
     var bottom:NSLayoutConstraint? = NSLayoutConstraint()
     var trailing:NSLayoutConstraint? = NSLayoutConstraint()
-    
-    
 
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,13 +31,13 @@ class CellTable: UITableViewCell {
         imgView.translatesAutoresizingMaskIntoConstraints   = false
         imgView.backgroundColor                             = .orange
         imgView.clipsToBounds                               = true
-        imgView.layer.cornerRadius                          = SCREEN_WIDTH*0.03
+        imgView.layer.cornerRadius                          = SCREEN_WIDTH()*0.03
         viewMain.addSubview(imgView)
         
         lblTitle                                            = UILabel()
         lblTitle.translatesAutoresizingMaskIntoConstraints  = false;
         lblTitle.backgroundColor                            = .clear
-        lblTitle.font                                       = UIFont.systemFont(ofSize: SCREEN_WIDTH*0.043)
+        lblTitle.font                                       = UIFont.systemFont(ofSize: SCREEN_WIDTH()*0.043)
         lblTitle.textColor                                  = .black
         
         viewMain.addSubview(lblTitle)
@@ -68,10 +59,10 @@ class CellTable: UITableViewCell {
         
         
         //set up image 
-        C.set(item: imgView, attri: .leading, relatedBy: .equal, toItem: viewMain, attribute: .leading, multiplier: 1.0, constant: SCREEN_WIDTH*0.10, viewMain: self.contentView)
-        C.set(item: imgView, attri: .trailing, relatedBy: .equal, toItem: viewMain, attribute: .trailing, multiplier: 1.0, constant: -SCREEN_WIDTH*0.10, viewMain: self.contentView)
-        C.set(item: imgView, attri: .bottom, relatedBy: .equal, toItem: viewMain, attribute: .bottom, multiplier: 1.0, constant: -SCREEN_WIDTH*0.10, viewMain: self.contentView)
-        C.set(item: imgView, attri: .top, relatedBy: .equal, toItem: viewMain, attribute: .top, multiplier: 1.0, constant:  SCREEN_WIDTH*0.10, viewMain: self.contentView)
+        C.set(item: imgView, attri: .leading, relatedBy: .equal, toItem: viewMain, attribute: .leading, multiplier: 1.0, constant: SCREEN_WIDTH()*0.10, viewMain: self.contentView)
+        C.set(item: imgView, attri: .trailing, relatedBy: .equal, toItem: viewMain, attribute: .trailing, multiplier: 1.0, constant: -SCREEN_WIDTH()*0.10, viewMain: self.contentView)
+        C.set(item: imgView, attri: .bottom, relatedBy: .equal, toItem: viewMain, attribute: .bottom, multiplier: 1.0, constant: -SCREEN_WIDTH()*0.10, viewMain: self.contentView)
+        C.set(item: imgView, attri: .top, relatedBy: .equal, toItem: viewMain, attribute: .top, multiplier: 1.0, constant:  SCREEN_WIDTH()*0.10, viewMain: self.contentView)
         
         imgView.layoutIfNeeded()
         

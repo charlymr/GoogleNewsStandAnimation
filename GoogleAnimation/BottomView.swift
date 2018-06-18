@@ -44,9 +44,6 @@ class BottomView:UIView{
         self.tblHolder = TableHolder()
         self.tblHolder.setUpScrollerOnTop(v:self)
         
-        
-        
-        
     }
 
 }

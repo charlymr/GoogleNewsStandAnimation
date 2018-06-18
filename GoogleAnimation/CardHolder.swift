@@ -86,7 +86,7 @@ class CardHolder:UIScrollView,UIScrollViewDelegate{
                 
                 //set line there
                 
-                c.line.centerY       = C.get(item: c.line, attri: .bottom, relatedBy: .equal, toItem: c, attribute: .bottom, multiplier: 0.7, constant: is_iPhoneX ? 12 : 0, viewMain: v);
+                c.line.centerY       = C.get(item: c.line, attri: .bottom, relatedBy: .equal, toItem: c, attribute: .bottom, multiplier: 0.7, constant: require_SafeArea ? 12 : 0, viewMain: v);
                 
                 c.line.height    = C.get(item: c.line, attri: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: Animator.shared.config.line_height!, viewMain: v);
                 
@@ -175,13 +175,13 @@ class CardHolder:UIScrollView,UIScrollViewDelegate{
     //MARK:- Scroll View delegate
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
-        print(scrollView.contentOffset.x/SCREEN_WIDTH)
+        print(scrollView.contentOffset.x/SCREEN_WIDTH())
         
         
         for i in stride(from: 0, to:Animator.shared.config.cards!.count , by: 1){
             let card:Card = Animator.shared.config.cards![i];
             card.isSelected = false
-            if i == Int(scrollView.contentOffset.x/SCREEN_WIDTH){
+            if i == Int(scrollView.contentOffset.x/SCREEN_WIDTH()){
              card.isSelected = true
             }
         }

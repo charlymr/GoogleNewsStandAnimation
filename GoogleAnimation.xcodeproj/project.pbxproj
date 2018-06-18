@@ -42,6 +42,7 @@
 		82D5F74120D7145600A33F8D /* SwiperConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E022D1F345C14004A7D96 /* SwiperConfig.swift */; };
 		82D5F74220D7145600A33F8D /* SwipGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E022F1F345C89004A7D96 /* SwipGesture.swift */; };
 		82D5F74520D714C400A33F8D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4CE4F91F3AE16700362189 /* Model.swift */; };
+		82D5F74720D7842D00A33F8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82D5F74620D7842D00A33F8D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		82D5F71D20D7142500A33F8D /* GoogleAnimatorConstrainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleAnimatorConstrainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D5F72420D7142500A33F8D /* GoogleAnimatorConstrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnimatorConstrainTests.swift; sourceTree = "<group>"; };
 		82D5F72620D7142600A33F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82D5F74620D7842D00A33F8D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,10 +187,11 @@
 		6F3E01EA1F343ECC004A7D96 = {
 			isa = PBXGroup;
 			children = (
-				6F4CE4F71F3AE14C00362189 /* Controller */,
+				82D5F74620D7842D00A33F8D /* Main.storyboard */,
 				6F3E01F61F343ECC004A7D96 /* AppDelegate.swift */,
-				6F3E02261F3448C9004A7D96 /* Constraint */,
+				6F4CE4F71F3AE14C00362189 /* Controller */,
 				6F3E02271F344911004A7D96 /* Resources */,
+				6F3E02261F3448C9004A7D96 /* Constraint */,
 				6F3E01F51F343ECC004A7D96 /* GoogleAnimation */,
 				6F3E020A1F343ECD004A7D96 /* GoogleAnimationTests */,
 				6F3E02151F343ECD004A7D96 /* GoogleAnimationUITests */,
@@ -213,7 +216,6 @@
 		6F3E01F51F343ECC004A7D96 /* GoogleAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				82D5F65D20D6E53200A33F8D /* GoogleAnimator.xcassets */,
 				6F3E02331F347E60004A7D96 /* Animation */,
 				6F3E02281F344DC3004A7D96 /* GestureRecognizer */,
 			);
@@ -241,6 +243,7 @@
 		6F3E02261F3448C9004A7D96 /* Constraint */ = {
 			isa = PBXGroup;
 			children = (
+				6F4CE4F91F3AE16700362189 /* Model.swift */,
 				6F3E02241F3448C7004A7D96 /* Constraint.swift */,
 			);
 			name = Constraint;
@@ -256,6 +259,7 @@
 				6F870D461F34AC24004D5BCB /* 2.png */,
 				6F870D471F34AC24004D5BCB /* 3.png */,
 				6F3E02381F3488C4004A7D96 /* bg.jpeg */,
+				82D5F65D20D6E53200A33F8D /* GoogleAnimator.xcassets */,
 				6F3E01FD1F343ECC004A7D96 /* Assets.xcassets */,
 			);
 			name = Resources;
@@ -305,19 +309,10 @@
 		6F4CE4F71F3AE14C00362189 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6F4CE4F81F3AE15B00362189 /* Model */,
 				6F3E01F81F343ECC004A7D96 /* ViewController.swift */,
 				6F300BF81F3C65FC00943407 /* DetailVc.swift */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		6F4CE4F81F3AE15B00362189 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6F4CE4F91F3AE16700362189 /* Model.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		6F870D3F1F34A882004D5BCB /* CardHolder */ = {
@@ -536,6 +531,7 @@
 				82D5F65E20D6E53200A33F8D /* GoogleAnimator.xcassets in Resources */,
 				6F3E02011F343ECC004A7D96 /* LaunchScreen.storyboard in Resources */,
 				6F3E01FE1F343ECC004A7D96 /* Assets.xcassets in Resources */,
+				82D5F74720D7842D00A33F8D /* Main.storyboard in Resources */,
 				6F870D4B1F34AC24004D5BCB /* 3.png in Resources */,
 				6F870D491F34AC24004D5BCB /* 1.png in Resources */,
 			);
@@ -793,6 +789,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GoogleAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.konstant.GoogleAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -808,6 +805,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GoogleAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.konstant.GoogleAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -890,7 +888,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = GoogleAnimatorConstrain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				PRODUCT_BUNDLE_IDENTIFIER = com.irlmobile.GoogleAnimatorConstrain;
@@ -919,7 +917,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = GoogleAnimatorConstrain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.irlmobile.GoogleAnimatorConstrain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

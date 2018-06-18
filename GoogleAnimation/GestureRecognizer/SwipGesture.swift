@@ -15,8 +15,8 @@ class SwipeGesture:UISwipeGestureRecognizer{
     
    
     var cardTopConst:CGFloat     =  Animator.shared.config.top_Header_h!
-    var cardLeadingConst:CGFloat =  SCREEN_WIDTH*0.15
-    var cardHeightConst:CGFloat  = (SCREEN_HEIGHT-(Animator.shared.config.top_Header_h! + SCREEN_WIDTH*0.10))/CGFloat(Animator.shared.config.cards!.count)
+    var cardLeadingConst:CGFloat =  SCREEN_WIDTH()*0.15
+    var cardHeightConst:CGFloat  = (SCREEN_HEIGHT()-(Animator.shared.config.top_Header_h! + SCREEN_WIDTH()*0.10))/CGFloat(Animator.shared.config.cards!.count)
 
 
     
@@ -216,7 +216,7 @@ class SwipeGesture:UISwipeGestureRecognizer{
                                       
                                         
                                         
-                                        top += self.cardHeightConst+SCREEN_WIDTH*0.014;
+                                        top += self.cardHeightConst+SCREEN_WIDTH()*0.014;
                                         
 
                                     }
@@ -292,7 +292,7 @@ class SwipeGesture:UISwipeGestureRecognizer{
             
             
             Animator.shared.topView.cardHolder.contentSize = CGSize.init(width: xLeading, height: 0);
-            Animator.shared.topView.cardHolder.contentOffset = CGPoint(x: CGFloat(selectedIndex)*SCREEN_WIDTH, y: 0);
+            Animator.shared.topView.cardHolder.contentOffset = CGPoint(x: CGFloat(selectedIndex)*SCREEN_WIDTH(), y: 0);
             
             
         })

@@ -9,18 +9,28 @@
 import Foundation
 import UIKit
 
-public let SCREEN_WIDTH:CGFloat = UIScreen.main.bounds.size.width
-public let SCREEN_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
-public let is_iPhoneX: Bool = UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436
+public func SCREEN_WIDTH() -> CGFloat {
+    guard let mainWindow =  UIApplication.shared.delegate?.window as? UIWindow else { return 1 }
+    return mainWindow.bounds.size.width
+}
+
+public func  SCREEN_HEIGHT() -> CGFloat {
+    guard let mainWindow =  UIApplication.shared.delegate?.window as? UIWindow else { return 1 }
+    return mainWindow.bounds.size.height
+}
+
+public var require_SafeArea: Bool {
+    guard let mainWindow =  UIApplication.shared.delegate?.window as? UIWindow else {
+        return false
+    }
+    return mainWindow.safeAreaInsets.top  > 0.0
+}
 
 enum Stage:Int {
    case header_stage = 0,
     mid_stage,
     full_stage
 }
-
-
-
 
 public struct AnimationConfig{
  
@@ -35,16 +45,16 @@ public struct AnimationConfig{
    
     
     
-    var top_Header_h:CGFloat?   =  is_iPhoneX ? SCREEN_WIDTH*0.235 : SCREEN_WIDTH*0.17
+    var top_Header_h:CGFloat?   =  require_SafeArea ? SCREEN_WIDTH()*0.235 : SCREEN_WIDTH()*0.17
     
     
-    var mid_Header_h:CGFloat?   = SCREEN_HEIGHT*0.40
+    var mid_Header_h:CGFloat?   = SCREEN_HEIGHT()*0.40
     
     
-    var full_Header_h:CGFloat?  = SCREEN_HEIGHT
+    var full_Header_h:CGFloat?  = SCREEN_HEIGHT()
     
     
-    var headerH:CGFloat?        =  SCREEN_HEIGHT*0.40
+    var headerH:CGFloat?        =  SCREEN_HEIGHT()*0.40
     
     
     var animation_speed:Float?   = 0.5
@@ -53,8 +63,8 @@ public struct AnimationConfig{
     var topHeaderHeightConstraint:NSLayoutConstraint?
 
     //card related
-    var line_height:CGFloat?    = SCREEN_WIDTH*0.01
-    var line_width:CGFloat?     = SCREEN_WIDTH*0.11
+    var line_height:CGFloat?    = SCREEN_WIDTH()*0.01
+    var line_width:CGFloat?     = SCREEN_WIDTH()*0.11
     
     
     

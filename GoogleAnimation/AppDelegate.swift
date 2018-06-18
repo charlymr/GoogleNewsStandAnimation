@@ -11,7 +11,9 @@ import GoogleAnimatorConstrain
 
 
 
-let gap:CGFloat   = is_iPhoneX ? SCREEN_WIDTH*0.05 : SCREEN_WIDTH*0.02
+func gap() -> CGFloat {
+    return require_SafeArea ? SCREEN_WIDTH()*0.05 : SCREEN_WIDTH()*0.02
+}
 
 
 @UIApplicationMain
@@ -19,15 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  
-        window = UIWindow.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
-        let vc = ViewController()
-        let  nav  = UINavigationController.init(rootViewController: vc)
-        window?.backgroundColor = .white
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
         return true
     }
 

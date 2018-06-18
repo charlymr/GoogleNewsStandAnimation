@@ -9,11 +9,9 @@
 
 import Foundation
 import UIKit
+
 class TableHolder:UIScrollView,UIScrollViewDelegate{
-    
-    
-    
-    
+
     //MARK:-  it will draw all cards with scroller on "topView"
     public func  setUpScrollerOnTop(v:BottomView!){
         
@@ -31,7 +29,7 @@ class TableHolder:UIScrollView,UIScrollViewDelegate{
         
         C.set(item: self, attri: .trailing, relatedBy: .equal, toItem:   v, attribute: .trailing, multiplier: 1.0, constant: 0, viewMain: v);
         
-        C.set(item: self, attri: .top, relatedBy: .equal, toItem:v , attribute: .top, multiplier: 1.0, constant:v!.header.bounds.size.height+SCREEN_WIDTH*0.03, viewMain:v);
+        C.set(item: self, attri: .top, relatedBy: .equal, toItem:v , attribute: .top, multiplier: 1.0, constant:v!.header.bounds.size.height+SCREEN_WIDTH()*0.03, viewMain:v);
         
         self.layoutIfNeeded()
         
@@ -72,5 +70,4 @@ class TableHolder:UIScrollView,UIScrollViewDelegate{
         
     }
     
-        
 }

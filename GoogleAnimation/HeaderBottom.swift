@@ -8,12 +8,9 @@
 
 import Foundation
 import UIKit
+
 class HeaderBottom:UIView{
-    
-    
-    
-    
-    
+
     convenience init(v:BottomView!) {
         
         self.init()
@@ -27,7 +24,7 @@ class HeaderBottom:UIView{
         
         C.set(item: self, attri: .width, relatedBy: .equal, toItem: v!, attribute: .width, multiplier: 1.0, constant: 0, viewMain: v!);
         
-        C.set(item: self, attri: .height, relatedBy: .equal, toItem:nil, attribute: .notAnAttribute, multiplier: 1.0, constant: SCREEN_WIDTH*0.15, viewMain: v!);
+        C.set(item: self, attri: .height, relatedBy: .equal, toItem:nil, attribute: .notAnAttribute, multiplier: 1.0, constant: SCREEN_WIDTH()*0.15, viewMain: v!);
         
         C.set(item: self, attri: .leading, relatedBy: .equal, toItem: v!, attribute: .leading, multiplier: 1.0, constant: 0, viewMain: v!);
         
@@ -38,8 +35,6 @@ class HeaderBottom:UIView{
           self.layer.shadowColor = UIColor.darkGray.cgColor
           self.layer.shadowOpacity = 0.7;
           self.layer.shadowRadius = 5;
-        
-        
         
     }
     

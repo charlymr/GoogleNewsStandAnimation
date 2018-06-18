@@ -9,23 +9,18 @@
 import UIKit
 import GoogleAnimatorConstrain
 
-class ViewController: UIViewController,AnimatorCardDelegate,AnimatorTableDelegate {
+class ViewController: UIViewController, AnimatorCardDelegate, AnimatorTableDelegate {
 
     
     override func viewWillAppear(_ animated: Bool) {
-        //set up navigation bar configuration
-        setNav();
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
         
         self.view.backgroundColor = .white
-         setView()
-      
+        setView()
+
+        //set up navigation bar configuration
+        setNav();
     }
-    
 
     func setNav(){
     
@@ -34,15 +29,10 @@ class ViewController: UIViewController,AnimatorCardDelegate,AnimatorTableDelegat
         self.navigationController?.isNavigationBarHidden = true;
         self.statusBarColor(isWhite: true);
         
-        
-       
-        
-        
-    }
+   }
     
     func setView(){
     
-        
         //menu
         let btnMenu  =  UIButton(type: .custom)
         btnMenu.translatesAutoresizingMaskIntoConstraints = false
@@ -53,19 +43,13 @@ class ViewController: UIViewController,AnimatorCardDelegate,AnimatorTableDelegat
         btnMenu.tag = 1
         self.view.addSubview(btnMenu)
         
-        
-        
-        
         C.set(item: btnMenu, attri: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.08, constant: 0, viewMain: self.view);
         
         C.set(item: btnMenu, attri: .height, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.08, constant: 0, viewMain: self.view);
         
-        C.set(item: btnMenu, attri: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1.0, constant: gap, viewMain: self.view);
+        C.set(item: btnMenu, attri: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1.0, constant: gap(), viewMain: self.view);
         
-        C.set(item: btnMenu, attri: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant:  gap*2.5, viewMain: self.view);
-        
-        
-        
+        C.set(item: btnMenu, attri: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant:  gap()*2.5, viewMain: self.view);
         
         //Search
         let btnSearch  =  UIButton(type: .custom)
@@ -77,20 +61,14 @@ class ViewController: UIViewController,AnimatorCardDelegate,AnimatorTableDelegat
         btnSearch.tag = 1
         self.view.addSubview(btnSearch)
         
-        
-        
-        
         C.set(item: btnSearch, attri: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.08, constant: 0, viewMain: self.view);
         
         C.set(item: btnSearch, attri: .height, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.08, constant: 0, viewMain: self.view);
         
-        C.set(item: btnSearch, attri: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: -gap, viewMain: self.view);
+        C.set(item: btnSearch, attri: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: -gap(), viewMain: self.view);
         
-        C.set(item: btnSearch, attri: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: gap*2.5, viewMain: self.view);
+        C.set(item: btnSearch, attri: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: gap()*2.5, viewMain: self.view);
         
-        
-       
-    
          //1. initialize animator
         Animator.shared.setAnimator(UIImage.init(named: "bg.jpeg"), self.view)
         Animator.shared.delegateTable = self;
@@ -112,8 +90,6 @@ class ViewController: UIViewController,AnimatorCardDelegate,AnimatorTableDelegat
         }
         UIApplication.shared.statusBarStyle = .default
     }
-    
-
     
     //MARK:- UIButton Actions
     @objc func btnActionTaped(btn:UIButton){

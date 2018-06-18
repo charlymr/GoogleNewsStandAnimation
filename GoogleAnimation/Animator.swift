@@ -16,7 +16,9 @@ public protocol AnimatorCardDelegate{
 }
 
 public extension AnimatorCardDelegate {
+    
     func cardClickedFromTopHeader(card:Card) {
+        
         /// This code block will animate selected card to mid way while full_stage
         if Animator.shared.config.headerStage == Stage.full_stage {
             let selectedGestureRecongnser = SwipeGesture()
@@ -35,35 +37,33 @@ public extension AnimatorCardDelegate {
         }
 
     }
-}
 
+}
 
 public protocol AnimatorTableDelegate {
     func  didSelect(item:Model,inCard card:Card)
 }
 
 public class Animator: NSObject{
-
     
-     public var delegateCard:AnimatorCardDelegate! = nil
-     public var delegateTable:AnimatorTableDelegate! = nil
+    public var delegateCard: AnimatorCardDelegate! = nil
     
-    lazy var config:AnimationConfig = AnimationConfig()
-
+    public var delegateTable: AnimatorTableDelegate! = nil
     
-    static public var shared:Animator = Animator()
+    lazy var config: AnimationConfig = AnimationConfig()
     
+    static public var shared: Animator = Animator()
     
-    var imgViewBg:UIImageView! = UIImageView()
+    var imgViewBg: UIImageView! = UIImageView()
    
-    var topView:TopView!
+    var topView: TopView!
     
-    var bottomView:BottomView!
+    var bottomView: BottomView!
 
     var viewMain:UIView!
 
-    public func setAnimator(_ backgroundImage:UIImage? = UIImage(),_ v:UIView? = UIView(),_ config:AnimationConfig? = AnimationConfig()) {
-   
+    public func setAnimator(_ backgroundImage: UIImage? = UIImage(),_ v: UIView? = UIView(),_ config: AnimationConfig? = AnimationConfig())
+    {
         self.config = config!
         
         if self.config.cards!.count > 6{
@@ -92,29 +92,28 @@ public class Animator: NSObject{
         imgViewBg.layoutIfNeeded()
         
         topView = TopView.init(v: imgViewBg);
-        
 
         //add swiper with directions .....
         Swip.shared.madeSwiperWithDirections(config: SwiperConfig(), view: imgViewBg);
   
     }
     
+    func cardSelected(card: Card)
+    {
     
-    func cardSelected(card:Card){
-    
-        if self.delegateCard != nil {
+        if self.delegateCard != nil
+        {
             self.delegateCard.cardClickedFromTopHeader(card: card);
-        
         }
     }
     
-    func tableItem(item:Model,card:Card){
-        if self.delegateTable != nil {
+    func tableItem(item: Model, card: Card)
+    {
+        if self.delegateTable != nil
+        {
             self.delegateTable.didSelect(item: item, inCard: card);
-            
         }
     }
-    
     
 //   static func destroy(){
 //    
@@ -124,10 +123,5 @@ public class Animator: NSObject{
 //    }
 //    
     
-    
-    
-    
-    
-
 }
 
