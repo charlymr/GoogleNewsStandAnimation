@@ -15,7 +15,7 @@ public class CellTable: UITableViewCell {
     var bottom:NSLayoutConstraint? = NSLayoutConstraint()
     var trailing:NSLayoutConstraint? = NSLayoutConstraint()
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -92,7 +92,7 @@ public class CellTable: UITableViewCell {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

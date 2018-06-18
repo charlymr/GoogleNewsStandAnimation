@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 public struct SwiperConfig {
     
-    var directions:[UISwipeGestureRecognizer.Direction]!
+    var directions: [UISwipeGestureRecognizerDirection]!
     
-    init(directions:[UISwipeGestureRecognizer.Direction]? =  [UISwipeGestureRecognizer.Direction.up,UISwipeGestureRecognizer.Direction.left,UISwipeGestureRecognizer.Direction.down,UISwipeGestureRecognizer.Direction.right]) {
+    init(directions: [UISwipeGestureRecognizerDirection]? =  [ .up, .left, .down, .right]) {
         self.directions = directions;
     }
 

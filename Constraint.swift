@@ -12,14 +12,14 @@ import UIKit
 public struct C {
     
     //set any constraint
-    static public func  set(item:AnyObject,
-                            attri:NSLayoutConstraint.Attribute,
-                            relatedBy: NSLayoutConstraint.Relation = .equal,
-                            toItem:AnyObject? = nil,
-                            attribute:NSLayoutConstraint.Attribute = .notAnAttribute,
-                            multiplier:CGFloat = 1,
-                            constant:CGFloat = 0,
-                            viewMain:AnyObject){
+    static public func  set(item: AnyObject,
+                            attri: NSLayoutAttribute,
+                            relatedBy: NSLayoutRelation = .equal,
+                            toItem: AnyObject? = nil,
+                            attribute: NSLayoutAttribute = .notAnAttribute,
+                            multiplier: CGFloat = 1,
+                            constant: CGFloat = 0,
+                            viewMain: AnyObject){
         
         
         let any:NSLayoutConstraint = NSLayoutConstraint.init(item: item, attribute: attri, relatedBy: relatedBy, toItem: toItem, attribute: attribute, multiplier: multiplier, constant: constant)
@@ -29,14 +29,14 @@ public struct C {
     
     
     //get any  constraint
-    static public func  get(item:AnyObject,
-                            attri:NSLayoutConstraint.Attribute,
-                            relatedBy: NSLayoutConstraint.Relation = .equal,
-                            toItem:AnyObject? = nil,
-                            attribute:NSLayoutConstraint.Attribute = .notAnAttribute,
-                            multiplier:CGFloat = 1,
-                            constant:CGFloat = 0,
-                            viewMain:AnyObject)->NSLayoutConstraint{
+    static public func  get(item: AnyObject,
+                            attri: NSLayoutAttribute,
+                            relatedBy: NSLayoutRelation = .equal,
+                            toItem: AnyObject? = nil,
+                            attribute: NSLayoutAttribute = .notAnAttribute,
+                            multiplier: CGFloat = 1,
+                            constant: CGFloat = 0,
+                            viewMain: AnyObject)->NSLayoutConstraint{
         
         
         let any:NSLayoutConstraint = NSLayoutConstraint.init(item: item, attribute: attri, relatedBy: relatedBy, toItem: toItem, attribute: attribute, multiplier: multiplier, constant: constant)

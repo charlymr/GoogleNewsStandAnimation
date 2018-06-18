@@ -21,7 +21,7 @@ class SwipeGesture:UISwipeGestureRecognizer{
 
     
     
-    convenience init(direction:UISwipeGestureRecognizer.Direction,view:UIView) {
+    convenience init(direction: UISwipeGestureRecognizerDirection, view:UIView) {
         
         self.init()
     
@@ -40,21 +40,21 @@ class SwipeGesture:UISwipeGestureRecognizer{
         
         print(gesture.direction)
         switch gesture.direction {
-        case UISwipeGestureRecognizer.Direction.down:
+        case .down:
             animateHeaderViewHeight(gesture: gesture);
             Animator.shared.config.animationTopBottomValue = -Animator.shared.config.animationaccerlation
             Animator.shared.config.animationleftRightValue = 0.0;
         
-        case UISwipeGestureRecognizer.Direction.up:
+        case .up:
             animateHeaderViewHeight(gesture: gesture);
             Animator.shared.config.animationTopBottomValue = Animator.shared.config.animationaccerlation
                Animator.shared.config.animationleftRightValue = 0.0;
-        case UISwipeGestureRecognizer.Direction.left:
+        case .left:
             print("left swipe")
             Animator.shared.config.animationTopBottomValue = 0.0
             Animator.shared.config.animationleftRightValue = -Animator.shared.config.animationaccerlation;
             animatescrollerleftRight(gesture: gesture)
-        case UISwipeGestureRecognizer.Direction.right:
+        case .right:
             Animator.shared.config.animationTopBottomValue = 0.0
             Animator.shared.config.animationleftRightValue = Animator.shared.config.animationaccerlation;
             print("right swipe")
@@ -76,14 +76,16 @@ class SwipeGesture:UISwipeGestureRecognizer{
         
         }
        
-         if gesture.direction == UISwipeGestureRecognizer.Direction.left{
+         if gesture.direction == .left
+         {
             //going forward
             if Animator.shared.config.selectedIndex! < (Animator.shared.config.cards.count-1){
                  Animator.shared.config.selectedIndex! += 1
             }
            
         
-         }else if gesture.direction == UISwipeGestureRecognizer.Direction.right {
+         }else if gesture.direction == .right
+         {
             //coming back
             if Animator.shared.config.selectedIndex! > 0{
                 Animator.shared.config.selectedIndex! -= 1
@@ -137,7 +139,8 @@ class SwipeGesture:UISwipeGestureRecognizer{
         //WHEN SLIDER TOP HEADER would in middle stage
         if (Animator.shared.config.headerH! == Animator.shared.config.mid_Header_h  ){
             
-                    if gesture.direction == UISwipeGestureRecognizer.Direction.up{
+                    if gesture.direction == .up
+                    {
                         
                         Animator.shared.config.headerStage = Stage(rawValue: 0);
                         Animator.shared.config.headerH =   Animator.shared.config.top_Header_h!
@@ -158,7 +161,8 @@ class SwipeGesture:UISwipeGestureRecognizer{
         //TOP CASE...
         if (Animator.shared.config.headerH! == Animator.shared.config.top_Header_h  ){
             
-                    if gesture.direction == UISwipeGestureRecognizer.Direction.down{
+                    if gesture.direction == .down
+                    {
                         Animator.shared.config.headerStage = Stage(rawValue: 1);
                         Animator.shared.config.headerH =  Animator.shared.config.mid_Header_h!
 
@@ -172,7 +176,8 @@ class SwipeGesture:UISwipeGestureRecognizer{
         //FULL CASE...
         if (Animator.shared.config.headerH! == Animator.shared.config.full_Header_h  ){
             
-                    if gesture.direction == UISwipeGestureRecognizer.Direction.up{
+                    if gesture.direction == .up
+                    {
                         Animator.shared.config.headerStage = Stage(rawValue: 1);
                         Animator.shared.config.headerH =  Animator.shared.config.mid_Header_h!
                         return  Animator.shared.config.mid_Header_h!
@@ -191,7 +196,8 @@ class SwipeGesture:UISwipeGestureRecognizer{
     
         
         if (Animator.shared.config.headerStage == Stage.full_stage){
-                if gesture.direction == UISwipeGestureRecognizer.Direction.down{
+                if gesture.direction == .down
+                {
                     
                     var top = self.cardTopConst;
                     
