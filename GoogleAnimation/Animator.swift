@@ -50,7 +50,7 @@ public class Animator: NSObject{
     
     public var delegateTable: AnimatorTableDelegate! = nil
     
-    lazy var config: AnimationConfig = AnimationConfig()
+    lazy var config: AnimationConfig = AnimationConfig(cards: [])
     
     static public var shared: Animator = Animator()
     
@@ -62,16 +62,9 @@ public class Animator: NSObject{
 
     var viewMain:UIView!
 
-    public func setAnimator(_ backgroundImage: UIImage? = UIImage(),_ v: UIView? = UIView(),_ config: AnimationConfig? = AnimationConfig())
-    {
-        self.config = config!
-        
-        if self.config.cards!.count > 6
-        {
-            print("Please set only 6 or less cards!!! ");
-            return
-        }
-    
+    public func setAnimator(_ backgroundImage: UIImage? = UIImage(), _ v: UIView? = UIView(), _ config: AnimationConfig) {
+        self.config = config
+ 
         viewMain = v;
     
         imgViewBg.image = backgroundImage
@@ -83,11 +76,8 @@ public class Animator: NSObject{
     
         
         C.set(item: imgViewBg, attri: .width, relatedBy: .equal, toItem: v!, attribute: .width, multiplier: 1.0, constant: 0, viewMain: v!);
-        
         C.set(item: imgViewBg, attri: .height, relatedBy: .equal, toItem: v!, attribute: .height, multiplier: 1.0, constant: 0, viewMain: v!);
-        
         C.set(item: imgViewBg, attri: .centerX, relatedBy: .equal, toItem: v!, attribute: .centerX, multiplier: 1.0, constant: 0, viewMain: v!);
-        
         C.set(item: imgViewBg, attri: .centerY, relatedBy: .equal, toItem: v!, attribute: .centerY, multiplier: 1.0, constant:0, viewMain:v!);
         
         imgViewBg.layoutIfNeeded()

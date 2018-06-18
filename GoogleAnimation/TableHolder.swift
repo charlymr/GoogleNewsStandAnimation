@@ -41,7 +41,7 @@ class TableHolder:UIScrollView,UIScrollViewDelegate{
     
     func setUpTbles(_ v:UIScrollView){
         
-        let cardsCount =    Animator.shared.config.cards!.count
+        let cardsCount =    Animator.shared.config.cards.count
         
         
             if cardsCount > 0 {
@@ -49,7 +49,7 @@ class TableHolder:UIScrollView,UIScrollViewDelegate{
                 //draw on scroller ...
                     for i in stride(from: 0, to: cardsCount, by: 1){
                             //get each card and set up in scroller
-                            let c = Animator.shared.config.cards![i]
+                            let c = Animator.shared.config.cards[i]
                             c.tblView! = TableView.init(v: self,xLeading:xLeading);
                             c.tblView.items = c.items
                             c.tblView.reloadData()

@@ -16,7 +16,7 @@ class SwipeGesture:UISwipeGestureRecognizer{
    
     var cardTopConst:CGFloat     =  Animator.shared.config.top_Header_h!
     var cardLeadingConst:CGFloat =  SCREEN_WIDTH()*0.15
-    var cardHeightConst:CGFloat  = (SCREEN_HEIGHT()-(Animator.shared.config.top_Header_h! + SCREEN_WIDTH()*0.10))/CGFloat(Animator.shared.config.cards!.count)
+    var cardHeightConst:CGFloat  = (SCREEN_HEIGHT()-(Animator.shared.config.top_Header_h! + SCREEN_WIDTH()*0.10))/CGFloat(Animator.shared.config.cards.count)
 
 
     
@@ -78,7 +78,7 @@ class SwipeGesture:UISwipeGestureRecognizer{
        
          if gesture.direction == UISwipeGestureRecognizer.Direction.left{
             //going forward
-            if Animator.shared.config.selectedIndex! < (Animator.shared.config.cards!.count-1){
+            if Animator.shared.config.selectedIndex! < (Animator.shared.config.cards.count-1){
                  Animator.shared.config.selectedIndex! += 1
             }
            
@@ -101,8 +101,8 @@ class SwipeGesture:UISwipeGestureRecognizer{
     
     
     func setSelectedCardIndex(){
-        for i in stride(from: 0, to:Animator.shared.config.cards!.count , by: 1){
-            let card:Card = Animator.shared.config.cards![i];
+        for i in stride(from: 0, to:Animator.shared.config.cards.count , by: 1){
+            let card:Card = Animator.shared.config.cards[i];
             card.isSelected = false
             if i == Animator.shared.config.selectedIndex!{
                 card.isSelected = true
@@ -199,8 +199,8 @@ class SwipeGesture:UISwipeGestureRecognizer{
                                 //animate cards top+leading and make them horizontal to vertical stage...
                                 UIView.animate(withDuration: TimeInterval(Animator.shared.config.animation_speed!), animations: {
                                     
-                                    for i in stride(from: 0, to: Animator.shared.config.cards!.count, by: 1){
-                                        let card                =  Animator.shared.config.cards![i];
+                                    for i in stride(from: 0, to: Animator.shared.config.cards.count, by: 1){
+                                        let card                =  Animator.shared.config.cards[i];
                                         card.height!.constant   = self.cardHeightConst;
                                         card.leading!.constant  = self.cardLeadingConst;
                                         card.top!.constant      =   top;
@@ -239,8 +239,8 @@ class SwipeGesture:UISwipeGestureRecognizer{
            
        
             var selectedIndex = 0;
-            for i in stride(from: 0, to: Animator.shared.config.cards!.count, by: 1){
-                let card  =  Animator.shared.config.cards![i];
+            for i in stride(from: 0, to: Animator.shared.config.cards.count, by: 1){
+                let card  =  Animator.shared.config.cards[i];
                 
             
             
@@ -302,7 +302,7 @@ class SwipeGesture:UISwipeGestureRecognizer{
     }
     
     func reloadTbls(){
-        let cardsCount =    Animator.shared.config.cards!.count
+        let cardsCount =    Animator.shared.config.cards.count
         
         
         if cardsCount > 0 {
@@ -310,7 +310,7 @@ class SwipeGesture:UISwipeGestureRecognizer{
             //draw on scroller ...
             for i in stride(from: 0, to: cardsCount, by: 1){
                 //get each card and set up in scroller
-                let c = Animator.shared.config.cards![i]
+                let c = Animator.shared.config.cards[i]
                  c.tblView.reloadData()
              
             }
@@ -323,8 +323,8 @@ class SwipeGesture:UISwipeGestureRecognizer{
     func ceterlize(isCenterlize:Bool){
     
         if isCenterlize{
-            for i in stride(from: 0, to: Animator.shared.config.cards!.count, by: 1){
-                let card  =  Animator.shared.config.cards![i];
+            for i in stride(from: 0, to: Animator.shared.config.cards.count, by: 1){
+                let card  =  Animator.shared.config.cards[i];
                 if card.isSelected!{
                 
                     //draw all lines here and selected should be white else gray

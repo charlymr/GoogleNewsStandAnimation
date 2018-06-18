@@ -45,7 +45,7 @@ class CardHolder:UIScrollView,UIScrollViewDelegate{
     //MARK:- Set up your cards on scroller..
     func setUpCards(_ v:UIScrollView){
         
-     let cardsCount =    Animator.shared.config.cards!.count
+     let cardsCount =    Animator.shared.config.cards.count
         
         if cardsCount > 0 {
             
@@ -55,7 +55,7 @@ class CardHolder:UIScrollView,UIScrollViewDelegate{
                 
                 
                 //get each card and set up in scroller
-                let c = Animator.shared.config.cards![i]
+                let c = Animator.shared.config.cards[i]
                 c.translatesAutoresizingMaskIntoConstraints = false;
                 c.tag = i
                 self.addSubview(c);
@@ -163,7 +163,7 @@ class CardHolder:UIScrollView,UIScrollViewDelegate{
         
         
         
-        let card:Card = Animator.shared.config.cards![btn.tag] as Card;
+        let card:Card = Animator.shared.config.cards[btn.tag] as Card;
         Animator.shared.cardSelected(card: card);
         
         
@@ -178,8 +178,8 @@ class CardHolder:UIScrollView,UIScrollViewDelegate{
         print(scrollView.contentOffset.x/SCREEN_WIDTH())
         
         
-        for i in stride(from: 0, to:Animator.shared.config.cards!.count , by: 1){
-            let card:Card = Animator.shared.config.cards![i];
+        for i in stride(from: 0, to:Animator.shared.config.cards.count , by: 1){
+            let card:Card = Animator.shared.config.cards[i];
             card.isSelected = false
             if i == Int(scrollView.contentOffset.x/SCREEN_WIDTH()){
              card.isSelected = true

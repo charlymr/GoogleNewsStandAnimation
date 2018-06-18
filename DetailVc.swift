@@ -23,12 +23,9 @@ class DetailVc: UIViewController {
     
     
     func setNav(){
-        
         self.edgesForExtendedLayout = []
-        self.automaticallyAdjustsScrollViewInsets = false;
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.title = titleString!
-    
         
     }
     

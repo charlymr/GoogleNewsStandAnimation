@@ -25,14 +25,12 @@ class ViewController: UIViewController, AnimatorCardDelegate, AnimatorTableDeleg
     func setNav(){
     
         self.edgesForExtendedLayout = []
-        self.automaticallyAdjustsScrollViewInsets = false;
         self.navigationController?.isNavigationBarHidden = true;
-        self.statusBarColor(isWhite: true);
         
    }
     
-    func setView(){
-    
+    func setNavButton() {
+        
         //menu
         let btnMenu  =  UIButton(type: .custom)
         btnMenu.translatesAutoresizingMaskIntoConstraints = false
@@ -44,11 +42,8 @@ class ViewController: UIViewController, AnimatorCardDelegate, AnimatorTableDeleg
         self.view.addSubview(btnMenu)
         
         C.set(item: btnMenu, attri: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.08, constant: 0, viewMain: self.view);
-        
         C.set(item: btnMenu, attri: .height, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.08, constant: 0, viewMain: self.view);
-        
         C.set(item: btnMenu, attri: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1.0, constant: gap(), viewMain: self.view);
-        
         C.set(item: btnMenu, attri: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant:  gap()*2.5, viewMain: self.view);
         
         //Search
@@ -62,33 +57,33 @@ class ViewController: UIViewController, AnimatorCardDelegate, AnimatorTableDeleg
         self.view.addSubview(btnSearch)
         
         C.set(item: btnSearch, attri: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.08, constant: 0, viewMain: self.view);
-        
         C.set(item: btnSearch, attri: .height, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.08, constant: 0, viewMain: self.view);
-        
         C.set(item: btnSearch, attri: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: -gap(), viewMain: self.view);
-        
         C.set(item: btnSearch, attri: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: gap()*2.5, viewMain: self.view);
         
-         //1. initialize animator
-        Animator.shared.setAnimator(UIImage.init(named: "bg.jpeg"), self.view)
-        Animator.shared.delegateTable = self;
-        Animator.shared.delegateCard = self;
-        
-        //2. initialize animator with CARDS( you can configure your cards like this also)
-        // Animator.shared.setAnimator(UIImage.init(named: "bg.jpeg"), self.view,AnimationConfig(cards: [Card.init(bgImage: "0.png", strTitle: "SCIENCE", items: [ Model() ] ) ]) );
-        
+        // Button
         self.view.bringSubview(toFront: btnMenu)
         self.view.bringSubview(toFront: btnSearch)
         
     }
+    
+    func setView(){
 
-    //MARK:-  status  bar related
-    func statusBarColor(isWhite:Bool = false){
-        if isWhite{
-            UIApplication.shared.statusBarStyle = .lightContent
-            return
-        }
-        UIApplication.shared.statusBarStyle = .default
+        //1. initialize animator
+        let cards = [
+            Card.init(bgImage: "0.png", strTitle: "SCIENCE",   items: [ Model(), Model(), Model()] ),
+            Card.init(bgImage: "1.png", strTitle: "SPORTS",    items: [ Model(), Model(), Model(), Model(), Model(), Model()] ),
+            Card.init(bgImage: "2.png", strTitle: "FRIENDS",   items: [ Model(), Model(), Model(), Model()] ),
+            Card.init(bgImage: "3.png", strTitle: "STYLISH",   items: [ Model(), Model() ] )
+        ]
+        
+        Animator.shared.setAnimator(UIImage.init(named: "bg.jpeg"), self.view, AnimationConfig(cards: cards) )
+        Animator.shared.delegateTable = self;
+        Animator.shared.delegateCard = self;
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     //MARK:- UIButton Actions

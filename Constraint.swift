@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct C{
+public struct C {
     
     //set any constraint
     static public func  set(item:AnyObject,

@@ -61,7 +61,7 @@ class TableView:UITableView,UITableViewDelegate,UITableViewDataSource,UIScrollVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let card:Card = Animator.shared.config.cards![Animator.shared.config.selectedIndex!] as Card;
+        let card:Card = Animator.shared.config.cards[Animator.shared.config.selectedIndex!] as Card;
         let item:Model = items![indexPath.row] as Model;
         Animator.shared.tableItem(item: item, card: card);
     }
