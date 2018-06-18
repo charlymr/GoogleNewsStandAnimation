@@ -66,7 +66,8 @@ public class Animator: NSObject{
     {
         self.config = config!
         
-        if self.config.cards!.count > 6{
+        if self.config.cards!.count > 6
+        {
             print("Please set only 6 or less cards!!! ");
             return
         }

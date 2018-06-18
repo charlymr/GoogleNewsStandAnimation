@@ -31,7 +31,9 @@ public class Card:UIImageView{
     
     lazy  var constraits:[NSLayoutConstraint]?  = [NSLayoutConstraint]()
     
-    convenience init(bgImage:String? = "0.png",strTitle:String? = "SCIENCE" ,items:[Model] =   [Model(),Model()]) {
+    convenience public init(bgImage:String? = "0.png",
+                     strTitle:String? = "SCIENCE",
+                     items:[Model] = [ Model(), Model()]) {
         
         self.init()
         self.isUserInteractionEnabled = true

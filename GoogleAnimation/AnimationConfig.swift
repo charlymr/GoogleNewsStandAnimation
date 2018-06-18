@@ -33,32 +33,21 @@ enum Stage:Int {
 }
 
 public struct AnimationConfig{
- 
-    public init() {
-    }
-    
+
     var selectedIndex:Int? = 0
     var animationaccerlation:CGFloat! = 40.0
     var animationTopBottomValue:CGFloat! = 0.0
     var animationleftRightValue:CGFloat! = 0.0
 
-   
-    
-    
     var top_Header_h:CGFloat?   =  require_SafeArea ? SCREEN_WIDTH()*0.235 : SCREEN_WIDTH()*0.17
-    
     
     var mid_Header_h:CGFloat?   = SCREEN_HEIGHT()*0.40
     
-    
     var full_Header_h:CGFloat?  = SCREEN_HEIGHT()
-    
     
     var headerH:CGFloat?        =  SCREEN_HEIGHT()*0.40
     
-    
     var animation_speed:Float?   = 0.5
-    
     
     var topHeaderHeightConstraint:NSLayoutConstraint?
 
@@ -66,29 +55,22 @@ public struct AnimationConfig{
     var line_height:CGFloat?    = SCREEN_WIDTH()*0.01
     var line_width:CGFloat?     = SCREEN_WIDTH()*0.11
     
-    
-    
-
-    
     var headerStage:Stage?  = Stage.init(rawValue:1)
     
     lazy  var cards:[Card]? = [Card]()
-   
-    
-    
+
     lazy  var lineBgSelectedColor:UIColor?  = .white
+    
     lazy  var lineBgNormalColor:UIColor?    = .gray
     
-
-    
-    init(
-          cards:[Card]? = [Card.init(bgImage: "0.png", strTitle: "SCIENCE", items: [Model(),Model(),Model()]),
+    public init(
+          cards:[Card]? = [Card.init(bgImage: "0.png", strTitle: "SCIENCE", items: [ Model(), Model(), Model()]),
                            
-                           Card.init(bgImage: "1.png", strTitle: "SPORTS", items: [Model(),Model(),Model(),Model(),Model(),Model()]),
+                           Card.init(bgImage: "1.png", strTitle: "SPORTS", items: [ Model(), Model(), Model(), Model(), Model(), Model()]),
                            
-                           Card.init(bgImage: "2.png", strTitle: "FRIENDS", items: [Model(),Model(),Model(),Model()]),
+                           Card.init(bgImage: "2.png", strTitle: "FRIENDS", items: [ Model(), Model(), Model(), Model()]),
                            
-                           Card.init(bgImage: "3.png", strTitle: "STYLISH", items: [Model(),Model()] )
+                           Card.init(bgImage: "3.png", strTitle: "STYLISH", items: [ Model(), Model()] )
 
                             ])
     {
@@ -96,8 +78,7 @@ public struct AnimationConfig{
         self.headerH = self.mid_Header_h
         self.cards = cards
         
-        
-        
+       
     }
     
     

@@ -7,17 +7,18 @@
 //
 
 import Foundation
-public class Model:NSObject {
 
-    var title:String?
-    var icon:String?
-  
+
+public class Model: NSObject
+{
+
+    var title: String?
     
-    public init(title:String? = "",icon:String? = "0.png") {
+    var icon: String?
+  
+    public init(title: String? = "", icon: String? = "0.png") {
         self.title = title
-          self.icon = icon
+        self.icon = icon
     }
     
-    
-
 }
