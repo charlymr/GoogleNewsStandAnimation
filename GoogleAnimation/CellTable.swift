@@ -15,7 +15,7 @@ public class CellTable: UITableViewCell {
     var bottom:NSLayoutConstraint? = NSLayoutConstraint()
     var trailing:NSLayoutConstraint? = NSLayoutConstraint()
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

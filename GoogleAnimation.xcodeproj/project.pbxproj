@@ -488,6 +488,7 @@
 					};
 					82D5F71420D7142500A33F8D = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					82D5F71C20D7142500A33F8D = {
@@ -894,7 +895,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.irlmobile.GoogleAnimatorConstrain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -922,7 +923,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.irlmobile.GoogleAnimatorConstrain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

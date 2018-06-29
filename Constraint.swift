@@ -13,10 +13,10 @@ public struct C {
     
     //set any constraint
     static public func  set(item: AnyObject,
-                            attri: NSLayoutAttribute,
-                            relatedBy: NSLayoutRelation = .equal,
+                            attri: NSLayoutConstraint.Attribute,
+                            relatedBy: NSLayoutConstraint.Relation = .equal,
                             toItem: AnyObject? = nil,
-                            attribute: NSLayoutAttribute = .notAnAttribute,
+                            attribute: NSLayoutConstraint.Attribute = .notAnAttribute,
                             multiplier: CGFloat = 1,
                             constant: CGFloat = 0,
                             viewMain: AnyObject){
@@ -30,10 +30,10 @@ public struct C {
     
     //get any  constraint
     static public func  get(item: AnyObject,
-                            attri: NSLayoutAttribute,
-                            relatedBy: NSLayoutRelation = .equal,
+                            attri: NSLayoutConstraint.Attribute,
+                            relatedBy: NSLayoutConstraint.Relation = .equal,
                             toItem: AnyObject? = nil,
-                            attribute: NSLayoutAttribute = .notAnAttribute,
+                            attribute: NSLayoutConstraint.Attribute = .notAnAttribute,
                             multiplier: CGFloat = 1,
                             constant: CGFloat = 0,
                             viewMain: AnyObject)->NSLayoutConstraint{
